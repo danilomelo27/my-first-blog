@@ -7,20 +7,13 @@
             <h1><a href="/">Blog do Dan</a></h1>
         </div>
 
-        <div>
-            <p>Publicado: 18/12/18, 10:19</p>
-            <h2><a href="">Meu primeiro post</a></h2>
-            <p>Oieee!!!</p><br>
-            <p>Funcionou!</p>
-        </div>
-
-        <div>
-            <p>Publicado: 18/12/18, 10:22</p>
-            <h2><a href="">Meu segundo post</a></h2>
-            <p><em><strong>TOP!!!</strong></em></p>
-            <ul><li>Nome</li><li>Sobrenome</li>            
-            </ul>
-        </div>
+        {% for post in posts %}
+            <div>
+                <h1><a href="">{{post.title}} </a></h1>
+                <p>{{post.text|linebreaksbr}}</p>
+                <p>Publicado em: {{post.published_date}}</p>
+            </div>
+        {% endfor %}
 
     </body>
 </html>
